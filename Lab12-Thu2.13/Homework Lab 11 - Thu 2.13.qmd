@@ -1,0 +1,38 @@
+---
+title: "Homework for Lab 12 - Thu 2.13"
+author: "Jessica Le (PID: A17321021)"
+format: pdf
+---
+
+## Section 4: Population Scale Analysis
+
+One sample is obviously not enough to know what is happening in a population. You are interested in assessing genetic differences on a population scale. So, you processed about ~230 samples and did the normalization on a genome level. Now, you want to find whether there is any association of the 4 asthma-associated SNPs (rs8067378…) on ORMDL3
+expression.
+
+> Read this file into R and determine the sample size for each genotype and their corresponding median expression levels for each of these genotypes.
+
+```{r}
+expr <- read.table("rs8067378_ENSG00000172057.6.txt")
+head(expr)
+```
+
+```{r}
+library(tidyverse)
+expr %>% 
+  group_by(geno) %>%
+  summarize(median=median(exp))
+```
+The median expression levels (rounded to 2 decimal places) for the genotypes are the following: 31.25 for A/A, 25.06 for A/G, and 20.07 for G/G. 
+
+> Q14.  Generate a boxplot with a box per genotype, what could you infer from the relative
+expression value between A/A and G/G displayed in this plot? Does the SNP effect the
+expression of ORMDL3?
+
+```{r}
+library(ggplot2)
+ggplot(expr) + aes(x=geno, y=exp, fill=geno) + 
+  geom_boxplot(notch=TRUE,) + 
+  labs(x="Genotype", y="Expression", fill="Genotype")
+  
+```
+From the plot, it can be inferred that the expression of homozygous A (A/A) is the most common for ORMDL3 expression followed by A/G, and homozygous G (G/G) is the least common. It can be inferred that SNP does effect expression of ORMDL3 because certain genotype can lead to relatively higher expression of ORMDL3 compared to others. In this case, it is shown that the genotype A/A expresses ORMDL3 more often than the G/G genotype. 
