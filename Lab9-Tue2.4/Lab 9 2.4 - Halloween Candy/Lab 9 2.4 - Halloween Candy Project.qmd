@@ -1,0 +1,73 @@
+---
+title: "Lab 9 Tue 2/4: Halloween Candy project"
+author: "Jessica Le (PID: A17321021)"
+format: html
+---
+
+Today we will examind data from 538 common Halloween candy. In particular, we will use ggplot, dplyr, and PCA to make sense of this multivariate dataset. 
+
+## Importing candy data
+
+```{r}
+candy_file <- "Lab 9 - candy-data.txt"
+
+candy = read.csv(candy_file, row.names=1)
+head(candy)
+```
+
+> Q1. How many different candy types are in this dataset? 
+
+```{r}
+nrow(candy)
+```
+There are 85 different types of candy in the dataset. 
+
+> Q2. How many fruity candy types are in this dataset? 
+
+```{r}
+sum(candy$fruity)
+```
+There are 38 fruity candy types in the dataset. 
+
+> How many chocolate candy are there in the dataset? 
+
+```{r}
+sum(candy$chocolate)
+```
+There are 27 chocolate candy in the dataset. 
+
+## What is your favorite candy? 
+
+`winpercent` provides the percentage of people who prefer a specific candy type over another randomly chosen candy from the dataset. A higher value indicates a more popular candy. 
+
+> Q3. What is your favorite candy in the dataset and what is it's `winpercent` value? 
+
+```{r}
+candy["Reese's Peanut Butter cup", "winpercent"]
+```
+```{r}
+candy["Reese's Peanut Butter cup", ]$winpercent
+```
+
+When paired with another type of candy in the dataset, 84% of the time Reese's Peanut Butter cup, which is my favorite candy, will be picked as the favored one. 
+
+> Q4. What is the `winpercent` value for "Kit Kat"? 
+
+```{r}
+candy["Kit Kat", ]$winpercent
+```
+
+> Q5. What is the `winpercent` value for "Tootsie Roll Snack Bars"? 
+
+```{r}
+candy["Tootsie Roll Snack Bars", ]$winpercent
+```
+
+The `skim()` function in the skimr package that helps give an overview of a given dataset. First, the package needs to be installed using `install.packages("")`. 
+
+```{r}
+library(skimr)
+skim(candy)
+```
+
+> Q6. Is there any variable/column that looks to be on a different scale to the majority of the other columns in the dataset?

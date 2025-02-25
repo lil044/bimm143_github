@@ -1,0 +1,267 @@
+---
+title: "Lab 7 - Tue 1/28"
+author: "Jessica Le (PID: A17321021)"
+format: pdf
+---
+
+Today we will explore unsupervised machine learning methods which include clustering annd dimensionality reduction methods. 
+
+Let's start by making up some data (where we know there are clear groups) that we can use to test out different clustering methods. 
+
+We can use `rnorm()` function to help us:
+
+```{r}
+hist(rnorm(n=3000, mean=3))
+```
+
+Make data with two "clusters"
+
+```{r}
+x <- c( rnorm(30, mean=-3), 
+        rnorm(30, mean=+3) )
+z <- cbind(x=x, y=rev(x))
+head(z)
+
+plot(z)
+```
+
+How big is 'z' 
+```{r}
+nrow(z)
+ncol(z)
+```
+
+##K-means clustering 
+
+The main function in "base" R for K-means clustering is called `kmeans()` 
+
+```{r}
+k <- kmeans(z, centers=2)
+k
+```
+
+```{r}
+attributes(k)
+```
+
+> Q. How many points lie in each cluster?
+
+```{r}
+k$size
+```
+
+> Q. What component of our results tells us about the cluster membership (i.e which point lies in which cluster)? 
+
+```{r}
+k$cluster
+```
+
+> Q. Center of each cluster? 
+
+```{r}
+k$centers
+```
+
+> Q. Put these results information together and make a "base R" plot of the clustering results with the cluster center points. 
+
+```{r}
+plot(z, col="blue")
+```
+
+```{r}
+plot(z, col=c("blue", "red"))
+```
+
+You can color by number.
+```{r}
+plot(z, col=c(5,8))
+```
+
+Plot colored by cluster membership: 
+
+```{r}
+plot(z, col=k$cluster)
+points(k$centers, col="blue", pch=15)
+```
+
+> Q. Run kmeans on our input `z` and define 4 clusters making the same result visualization plot as above (plot of z colored by cluster membership). 
+
+```{r}
+k4 <- kmeans(z, centers=4)
+plot(z, col=k4$cluster)
+points(k$centers, col="purple", pch=15)
+```
+
+## Hierarchical Clustering 
+
+The main function in base R for this called `hclust()` it will take an input of a distance matrix (key point is that you can't just give your "raw" data as input - you have to first calculate a distance matrix from your data). 
+
+```{r}
+d <- dist(z)
+hc <- hclust(d=d)
+hc
+```
+
+
+```{r}
+plot(hc)
+```
+
+Once I inspect the "tree"/dendrogram, I can "cut" the tree to yield my groupings or clusters. The function to do this is called `cutree()`. 
+
+```{r}
+grps <- cutree(hc, h=10)
+```
+
+```{r}
+plot(z, col=grps)
+```
+
+## Hands on with Principal Component Analysis (PCA)
+
+Let's examine some silly 17-dimensional data detailing food consumption in the UK (England, Scotland, Wales, and Northern Ireland). Are these countries eating habits different or similar and if so how? 
+
+### Data Import 
+
+```{r}
+url <- "https://tinyurl.com/UK-foods"
+x <- read.csv(url, row.names=1)
+```
+
+> Q1. How many rows and columns are in your new data set framed x? What R functions could you se to answer this question? 
+
+```{r}
+nrow(x)
+ncol(x)
+dim(x)
+```
+## Checking the Data 
+
+To preview the first 6 rows. 
+```{r}
+head(x)
+```
+Here, the row names are set as the first column of the `x` data frame rather than set as proper row names. So, we need to remove the first column. 
+
+```{r}
+rownames(x) <- x[,1]
+x <- x[,-1]
+head(x)
+```
+```{r}
+x <- read.csv(url, row.names=1)
+head(x)
+```
+
+> Q2. Which approach to solving the 'row-names problem' mentioned above do you prefer and why? Is one approach more robust than another under certain circumstances? 
+
+The second method is more preferable because if the first method with `x <- x[,-1]` is used multiple times it will keep removing a column of data each time and we will end up with an empty data set. The second method also requires less code which makes it easier to use. 
+
+## Spotting major differences and trends 
+
+```{r}
+barplot(as.matrix(x), beside=T, col=rainbow(nrow(x)))
+```
+
+```{r}
+barplot(as.matrix(x), beside=F, col=rainbow(nrow(x)))
+```
+
+> Q3. Changing what optional argument in the first barplot() function resulted in the second plot? 
+
+Changing the `beside` argument from True to False changed the barplot from bars adjacent to each other to bars stacked upon each other in the second plot. 
+
+> Q. Generating all pairwise plots may help somewhat. Can you make sense of the following code and resulting figure? What does it mean if a given point lies on the diagonal for a given plot?
+
+```{r}
+pairs(x, col=rainbow(10), pch=16)
+```
+The plot pairs each country together to compare their eating habits. If a point lies on the diagonal when comparing two countries, they have similar eating habits for the specified food group. If a point does not lie on the diagonal for a give plot it means that the corresponding country does not have similar eating habits to the comparison country for the food group of interest. 
+
+> Q6. What are the main differences between N. Ireland and the other countries of the UK in terms of this data-set? 
+
+Northern Ireland has one food group indicated by a dark blue point in the plots in which their food consumption of this group greatly varies from the other three countries. 
+
+
+
+Looking at these types of "pairwise plots" can be helpful but it does not scale well and kind of sucks. There must be a better way...
+
+### PCA to the rescue! 
+The main function for PCA in base R is called `prcomp()`. This function wants the transpose of our input data - i.e. the important foods in as columns and the countries as rows. 
+
+```{r}
+pca <- prcomp ( t(x) )
+summary(pca)
+```
+For cumulative proportion, a plot of PC1 and PC2 will capture 96.50% of the data. 
+
+Let's see what is in our PCA result object `pca` 
+
+```{r}
+attributes(pca)
+```
+
+The `pca$x` result object is where we will focus first as this details how the countries are related to each other in terms of our new "axis" (aka. "PCs", "eigenvectors", etc.). 
+
+```{r}
+head(pca$x)
+```
+
+> Q7. Complete the code below to generate a plot of PC1 vs. PC2. The second line adds text labels over the data points. 
+
+```{r}
+plot (pca$x[,1], pca$x[,2], pch=16, 
+      col=c("orange", "red", "blue", "darkgreen"), 
+      xlab="PC1", ylab="PC2", xlim=c(-270,500))
+text(pca$x[,1], pca$x[,2], colnames(x))
+```
+
+> Q8. Customize the plot so that the colors of the country names match the colors in our UK and Ireland map and table at the start of this document. 
+
+```{r}
+plot (pca$x[,1], pca$x[,2], 
+      xlab="PC1", ylab="PC2", xlim=c(-270,500))
+text(pca$x[,1], pca$x[,2], colnames(x), 
+     col=c("orange", "red", "blue", "darkgreen"))
+```
+
+We can look at the so-called PC "loadings" result object to see how the original foods contribute to our new PC (i.e. how the original variables contribute to our new better variables). The Eigenvectors contain information about the contributions of each principal component to the total variance of the coordiantes. 
+
+To calculate how much variation in the original data each PC accounts for, use the square of `pca$sdev`. 
+```{r}
+v <- round (pca$sdev^2/sum(pca$sdev^2)*100)
+v
+```
+The variance information is also provided in the second row in the summary of the dataset. 
+```{r}
+z <- summary(pca)
+z$importance
+```
+
+This information can be summarized in a plot of of the variance (eigenvalues) with respect to the principal component number (eigenvector number), which is given below. 
+
+```{r}
+barplot(v, xlab="Principal Component", ylab="Percent Variation")
+```
+Rotation helps to improve the interpretibility of the principal components by simplifying the structures of the loadings. It slightly moves the PCA axes relative to the original variable axes, while still maintaining the orthogonality (or “uncorrelatedness”) of the components. 
+
+```{r}
+pca$rotation
+```
+
+
+## Lets focus on PC1 as it accounts for > 90% of variance 
+
+```{r}
+par(mar=c(10, 3, 0.35, 0))
+barplot( pca$rotation[,1], las=2 )
+```
+The plot shows that food groups with the largest positive loading scores, which are fresh potatoes and soft drinks, "push" N. Ireland to the right side of the plot. In other words, N. Ireland greatly varies from the other countries in PC1 due to their consumption habits of fresh potatoes and soft drinks. On the other hand, foods with the highest negative scores contribute to the countries that are mainly present on the left side of the plot. So, the consumption of fresh fruit and alcoholic drinks contribute to the similar patterns observed for Wales, England, and Scotland. 
+
+> Q9. Generate a similar ‘loadings plot’ for PC2. What two food groups feature prominantely and what does PC2 maninly tell us about?
+
+```{r}
+par(mar=c(10, 3, 0.35, 0))
+barplot( pca$rotation[,2], las=2 )
+```
+This plot for PCA2, which considers the second most variation in the entire dataset, shows that soft drinks is the largest food group with a high positive loading score. This means that soft drinks is the main contributor that pushes Scotland upwards, and therefore leading to its distinction, in the plot comparing the food consumption of the four countries. On the other hand, fresh potatoes has the highest negative loading score which means that it is the food group that contributes most to the patterns between the countries towards the bottom of the graph, which are England, N. Ireland, and Wales. 
