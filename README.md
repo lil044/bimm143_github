@@ -11,3 +11,5 @@ My classwork from WI25 [BIMM143](https://bioboot.github.io/bimm143_W25/) at UC S
 - Class07 [Introduction to machine learning for Bioinformatics 1](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab7-Tue1.28/Lab%207%20-%20Tue%201.28/Lab%207%20-%20Tue%201%3A28.html)
 
 - Class08 [Unsupervised learning mini-project](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab8-Thu1.30/Lab%208%20-%20Thu%201.30.html)
+
+- Clas09 [Halloween Mini Candy Project](https://htmlpreview.github.io/?
