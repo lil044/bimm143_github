@@ -22,4 +22,4 @@ My classwork from WI25 [BIMM143](https://bioboot.github.io/bimm143_W25/) at UC S
 
 - Class 13 [Transcriptomics, RNA-Seq analysis, and the interpretation of gene lists](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab13-Tue2.18/Lab%2013%20Tue%202.18%20-%20RNA%20seq%20(pt.%201).html)
 
-- Class 14 [RNA-Seq mini project](https://htmlpreview.github.io/?
+- Class 14 [RNA-Seq mini project](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab14-Thu2.20/Lab%2014%20-%20RNA%20Seq%20Analysis%20Mini%20Project.html)
