@@ -12,4 +12,4 @@ My classwork from WI25 [BIMM143](https://bioboot.github.io/bimm143_W25/) at UC S
 
 - Class08 [Unsupervised learning mini-project](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab8-Thu1.30/Lab%208%20-%20Thu%201.30.html)
 
-- Clas09 [Halloween Mini Candy Project](https://htmlpreview.github.io/?
+- Clas09 [Halloween Mini Candy Project](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab9-Tue2.4/Lab%209%202.4%20-%20Halloween%20Candy/Lab%209%202..4%20-%20Halloween%20Candy.html)
