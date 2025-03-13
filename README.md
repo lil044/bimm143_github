@@ -14,4 +14,4 @@ My classwork from WI25 [BIMM143](https://bioboot.github.io/bimm143_W25/) at UC S
 
 - Clas09 [Halloween Mini Candy Project](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab9-Tue2.4/Lab%209%202.4%20-%20Halloween%20Candy/Lab%209%202..4%20-%20Halloween%20Candy.html)
 
-- Class10 [Structural Bioinformatics](
+- Class10 [Structural Bioinformatics](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab10-Thu2.6/Lab%2010%202.6%20-%20Structural%20Bioinformatics%20(Pt.1).html)
