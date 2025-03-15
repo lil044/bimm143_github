@@ -4,9 +4,9 @@ My classwork from WI25 [BIMM143](https://bioboot.github.io/bimm143_W25/) at UC S
 
 - Class01 [Welcome to Bioinformatics](https://github.com/lil044/bimm143_github/blob/main/BIMM143_Class1_1.7.pdf)
 
-- Class02 [Sequence alignment fundamentals, algorithms and applications](https://github.com/lil044/bimm143_github/blob/main/BIMM143_Class2_1.9.pdf))
+- Class02 [Sequence alignment fundamentals, algorithms and applications](https://github.com/lil044/bimm143_github/blob/main/BIMM143_Class2_1.9.pdf)
 
-- Class03 [Advanced sequence alignment and database searching](
+- Class03 [Advanced sequence alignment and database searching](https://github.com/lil044/bimm143_github/blob/main/BIMM143_Lecture3_Homework.pdf)
 
 - Class04 [Introduction to R](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab4-Thu1.16/Introduction-to-R.html)
 
