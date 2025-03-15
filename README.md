@@ -24,4 +24,4 @@ My classwork from WI25 [BIMM143](https://bioboot.github.io/bimm143_W25/) at UC S
 
 - Class 14 [RNA-Seq mini project](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab14-Thu2.20/Lab%2014%20-%20RNA%20Seq%20Analysis%20Mini%20Project.html)
 
-- Class 18 [Investigating pertussis resurgence mini project] (https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab18-Thu3.6/Lab18.html)
+- Class 18 [Investigating pertussis resurgence mini project](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab18-Thu3.6/Lab18.html)
