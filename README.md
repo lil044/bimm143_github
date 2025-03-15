@@ -27,3 +27,5 @@ My classwork from WI25 [BIMM143](https://bioboot.github.io/bimm143_W25/) at UC S
 - Class16 [Essential UNIX for bioinformatics](https://github.com/lil044/bimm143_github/blob/main/Lab16-Thu2.27/BIMM143%20-%20Homework%2016.pdf)
 
 - Class18 [Investigating pertussis resurgence mini project](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab18-Thu3.6/Lab18.html)
+
+- Final Project [Find A Gene Assignment](https://github.com/lil044/bimm143_github/blob/main/BIMM143%20-%20Find%20A%20Gene%20Assignment.pdf)
