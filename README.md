@@ -20,8 +20,10 @@ My classwork from WI25 [BIMM143](https://bioboot.github.io/bimm143_W25/) at UC S
 
 - Class12 [Genome informatics and high throughput sequencing](https://htmlpreview.github.io/?https://github.com/lil044/bimm143_github/blob/main/Lab12-Thu2.13/Homework%20Lab%2011%20-%20Thu%202.13.html)
 
-- Class 13 [Transcriptomics, RNA-Seq analysis, and the interpretation of gene lists](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab13-Tue2.18/Lab%2013%20Tue%202.18%20-%20RNA%20seq%20(pt.%201).html)
+- Class13 [Transcriptomics, RNA-Seq analysis, and the interpretation of gene lists](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab13-Tue2.18/Lab%2013%20Tue%202.18%20-%20RNA%20seq%20(pt.%201).html)
 
-- Class 14 [RNA-Seq mini project](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab14-Thu2.20/Lab%2014%20-%20RNA%20Seq%20Analysis%20Mini%20Project.html)
+- Class14 [RNA-Seq mini project](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab14-Thu2.20/Lab%2014%20-%20RNA%20Seq%20Analysis%20Mini%20Project.html)
 
-- Class 18 [Investigating pertussis resurgence mini project](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab18-Thu3.6/Lab18.html)
+- Class16 [Essential UNIX for bioinformatics](https://github.com/lil044/bimm143_github/blob/main/Lab16-Thu2.27/BIMM143%20-%20Homework%2016.pdf)
+
+- Class18 [Investigating pertussis resurgence mini project](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab18-Thu3.6/Lab18.html)
