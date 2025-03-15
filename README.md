@@ -2,6 +2,12 @@
 
 My classwork from WI25 [BIMM143](https://bioboot.github.io/bimm143_W25/) at UC San Diego
 
+- Class01 [Welcome to Bioinformatics](https://github.com/lil044/bimm143_github/blob/main/BIMM143_Class1_1.7.pdf)
+
+- Class02 [Sequence alignment fundamentals, algorithms and applications](https://github.com/lil044/bimm143_github/blob/main/BIMM143_Class2_1.9.pdf))
+
+- Class03 [Advanced sequence alignment and database searching](
+
 - Class04 [Introduction to R](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab4-Thu1.16/Introduction-to-R.html)
 
 - Class05 [Data Visualization with ggplot](https://htmlpreview.github.io/?https://raw.githubusercontent.com/lil044/bimm143_github/refs/heads/main/Lab5-Tue1.21/Class%205%20-%20Data%20Visualization%20with%20ggplot.html)
