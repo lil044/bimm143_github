@@ -1,0 +1,65 @@
+---
+title: "Lab19"
+author: "Jessica Le (PID: A17321021)"
+format: html
+---
+
+```{r}
+library(bio3d)
+```
+
+```{r}
+s <- read.fasta("A17321021_mutant_seq.fa")
+```
+
+The sites where amino acids/residues differ are the cancer specific mutations. 
+
+```{r}
+score <- conserv(s)
+positions <- which(score !=1)
+```
+
+```{r}
+residues <- s$ali[,positions]
+residues
+```
+
+```{r}
+paste(residues[1,], positions, residues[2,], sep="")
+```
+
+```{r, warning=FALSE}
+cif.file <- "~/Downloads/fold_mutant_tumor/fold_mutant_tumor_model_0.cif"
+x <- read.cif(cif.file)
+write.pdb(x, file="AF-model.pdb")
+```
+
+```{r, warning=FALSE}
+cif.file <- "~/Downloads/fold_mutant_tumor/fold_mutant_tumor_model_2.cif"
+x <- read.cif(cif.file)
+write.pdb(x, file="AF-model-2.pdb")
+```
+
+```{r}
+cif.file <- "~/Downloads/fold_mutant_tumor/fold_mutant_tumor_model_3.cif"
+x <- read.cif(cif.file)
+write.pdb(x, file="AF-model-3.pdb")
+```
+
+```{r}
+cif.file <- "~/Downloads/fold_mutant_tumor/fold_mutant_tumor_model_4.cif"
+x <- read.cif(cif.file)
+write.pdb(x, file="AF-model-4.pdb")
+```
+
+```{r}
+cif.file <- "~/Downloads/fold_mutant_tumor/fold_mutant_tumor_model_5.cif"
+x <- read.cif(cif.file)
+write.pdb(x, file="AF-model-5.pdb")
+```
+```{r}
+cif.file <- "~/Downloads/fold_mutant_tumor/fold_mutant_tumor_model_1.cif"
+x <- read.cif(cif.file)
+write.pdb(x, file="AF-model-1.pdb")
+```
+
